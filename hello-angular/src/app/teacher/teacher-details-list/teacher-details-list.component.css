@@ -1,0 +1,68 @@
+.app2 {
+    margin-top: 20px;
+    padding: 30px;
+}
+
+.sortable tr {
+    cursor: pointer;
+}
+
+.teacher_card {
+    padding-top: 30px;
+    width: 1000px;
+    background-color: white;
+    display: inline;
+    float: left;
+    border-radius: 30px;
+    box-shadow: 5px 10px 5px rgb(27, 27, 27);
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 30px;
+    position: relative;
+    left: 940px;
+    top: 20px;
+}
+
+a:hover {
+    background-color: rgb(66, 66, 66);
+    color: white;
+}
+
+.previous {
+    background-color: black;
+    color: white;
+}
+
+.input-group {
+    margin-left: 50px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    width: 90%;
+}
+
+.info {
+    background-color: #dddbd9;
+    height: 38px;
+    line-height: 38px;
+    width: 80%;
+    border-radius: 5px;
+    text-align: center;
+}
+
+span {
+    width: 170px;
+}
+
+.btn-back button {
+    margin: 35px;
+    background-color: #76a8e0;
+    color: #fff;
+}
+
+.btn-back button:hover {
+    background-color: #6d9dd3;
+}

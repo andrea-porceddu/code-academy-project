@@ -1,0 +1,31 @@
+.app2 {
+    margin-top: 60px;
+    padding: 50px;
+    width: 1000px;
+    border-radius: 30px;
+    background-color: #76a8e0;
+    box-shadow: 15px 25px 20px #1b1b1b;
+}
+
+h3 {
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.card {
+    background-color: #e9eff5;
+    border-radius: 10px;
+}
+
+.card .btn-home {
+    background-color: #76a8e0;
+    color: #fff;
+}
+
+.card img {
+    border-radius: 30px;
+}
+
+.card-img-top {
+    padding: 20px;
+}

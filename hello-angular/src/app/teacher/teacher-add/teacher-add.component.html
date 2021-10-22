@@ -1,0 +1,73 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+
+            <form novalidate (ngSubmit)="save(addTeacherForm)" #addTeacherForm="ngForm">
+
+                <label for="firstname" class="form-label">Nome</label>
+                <input type="text" class="form-control myshadow" id="firstname" name="firstname" required minlength="3" [(ngModel)]="teacher.firstname" #firsName="ngModel" [ngClass]="{ 'is-invalid' : ( firsName.touched || firsName.dirty ) && !firsName.valid }">
+                <span class="invalid-feedback">
+                 <span *ngIf="firsName.errors?.required"> Il nome è obbligatorio. </span>
+                <span *ngIf="firsName.errors?.minlength"> Il nome deve essere almeno di 3 caratteri. </span>
+                </span>
+
+                <label for="lastname" class="form-label">Cognome</label>
+                <input type="text" class="form-control myshadow" id="lastname" name="lastname" required minlength="3" [(ngModel)]="teacher.lastname" #lastname="ngModel" [ngClass]="{ 'is-invalid' : ( lastname.touched || lastname.dirty ) && !lastname.valid }">
+                <span class="invalid-feedback">
+                 <span *ngIf="lastname.errors?.required"> Il cognome è obbligatorio. </span>
+                <span *ngIf="lastname.errors?.minlength"> Il cognome deve essere almeno di 3 caratteri. </span>
+                </span>
+
+                <label for="dateOfBirth" class="form-label">Data di nascita</label>
+                <input type="date" class="form-control myshadow" id="dateOfBirth" onfocus="this.value=''" name="dateOfBirth" [(ngModel)]="teacher.dateOfBirth" #dateOfBirth="ngModel" [ngClass]="{ 'is-invalid' : ( dateOfBirth.touched || dateOfBirth.dirty ) && !dateOfBirth.valid }">
+                <span class="invalid-feedback">
+                 <span *ngIf="dateOfBirth.errors?.required"> La data di nascita è obbligatoria. </span>
+                </span>
+
+                <label for="phoneNumber" class="form-label">Numero di telefono</label>
+                <input type="text" class="form-control myshadow" id="phoneNumber" name="phoneNumber" required minlength="8" [(ngModel)]="teacher.phoneNumber" #phoneNumber="ngModel" [ngClass]="{ 'is-invalid' : ( phoneNumber.touched || phoneNumber.dirty ) && !phoneNumber.valid }">
+                <span class="invalid-feedback">
+                 <span *ngIf="phoneNumber.errors?.required"> Il numero di telefono è obbligatorio. </span>
+                <span *ngIf="phoneNumber.errors?.minlength"> Il numero di telefono deve essere almeno di 8 caratteri. </span>
+                </span>
+
+                <label for="email" class="form-label">Email</label>
+                <input type="text" class="form-control myshadow" id="email" name="email" [(ngModel)]="teacher.email" #email="ngModel" [ngClass]="{ 'is-invalid' : ( email.touched || email.dirty ) && !email.valid }">
+                <span class="invalid-feedback">
+                 <span *ngIf="email.errors?.required"> L'email è obbligatoria. </span>
+                </span>
+
+                <label for="address" class="form-label">Indirizzo</label>
+                <input type="text" class="form-control myshadow" id="address" name="address" [(ngModel)]="teacher.address" #address="ngModel" [ngClass]="{ 'is-invalid' : ( address.touched || address.dirty ) && !address.valid }">
+                <span class="invalid-feedback">
+                 <span *ngIf="address.errors?.required"> L'indirizzo è obbligatorio. </span>
+                </span>
+
+                <label for="city" class="form-label">Città</label>
+                <input type="text" class="form-control myshadow" id="city" name="city" [(ngModel)]="teacher.city" #city="ngModel" [ngClass]="{ 'is-invalid' : ( city.touched || city.dirty ) && !city.valid }">
+                <span class="invalid-feedback">
+                 <span *ngIf="city.errors?.required"> La città è obbligatoria. </span>
+                </span>
+
+                <label for="payRate" class="form-label">Costo</label>
+                <input type="text" class="form-control myshadow" id="payRate" name="payRate" [(ngModel)]="teacher.payRate" #payRate="ngModel" [ngClass]="{ 'is-invalid' : ( payRate.touched || payRate.dirty ) && !payRate.valid }">
+                <span class="invalid-feedback">
+                 <span *ngIf="payRate.errors?.required"> Il costo è obbligatorio. </span>
+                </span>
+
+                <div class="mt-3">
+                    <label for="isContractor" class="form-label">Sei un docente esterno?</label>
+                    <input type="checkbox" class="form-check-input ms-3 myshadow" id="isContractor" name="isContractor" [(ngModel)]="teacher.isContractor" #isContractor="ngModel">
+                    <br>
+                </div>
+
+                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                    <input type="submit" class="btn btn-info" value="invia" [title]="addTeacherForm.valid ? 'crea nuovo teachere' : 'invio disabilitato finchè i dati non sono validi'" [disabled]="!addTeacherForm.valid">
+                    <button (click)="onBack()" class="btn btn-warning">Indietro</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>

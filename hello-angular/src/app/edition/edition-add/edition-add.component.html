@@ -1,0 +1,42 @@
+<div class="container app2" id="main">
+</div>
+
+<div class="image_card">
+    <img src="\assets\imagines\online-course.png" alt="..." class="responsive-img" style="width: 200px;">
+</div>
+
+<div class="edition_card" *ngIf="edition">
+
+    <a (click)="onBack()" class="previous">&laquo;</a>
+
+    <span>Edizioni</span>
+
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">ID</span>
+        <span class="info"> {{ edition.id }}</span>
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Codice</span>
+        <span class="info"> {{ edition.code}}</span>
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Descrizione</span>
+        <span class="info"> {{ edition.description }}</span>
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Prezzo Effettivo</span>
+        <span class="info"> {{ edition.realPrice }}</span>
+    </div>
+</div>
+<label for="courseId" class="form-label">Corsi</label>
+<select id="courseId" class="form-select myshadow" name="courseId" formControlName="courseId">
+                <option *ngFor="let c of courses" [value]="c.id"> {{ c.title }} </option>
+            </select>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    <input type="submit" class="btn btn-info" value="invia" [title]="editionForm.valid? 'Crea edizione' : 'Disabilitata finchè i dati non sono corretti'" [disabled]="!editionForm.valid">
+    <button (click)="onBack()" class="btn btn-warning">Indietro</button>
+</div>

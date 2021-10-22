@@ -1,0 +1,60 @@
+<div class="container app2" id="main">
+
+    <div class="row justify-content-center">
+
+        <div class="student_card" *ngIf="student">
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">ID</span>
+                <span class="info"> {{ student.id }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Nome</span>
+                <span class="info"> {{ student.firstname}}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Cognome</span>
+                <span class="info"> {{ student.lastname }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Data di Nascita</span>
+                <span class="info"> {{ student.dateOfBirth }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Indirizzo</span>
+                <span class="info"> {{ student.address }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Città</span>
+                <span class="info"> {{ student.city }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Email</span>
+                <span class="info"> {{ student.email }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Numero di telefono</span>
+                <span class="info"> {{ student.phoneNumber }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Impiegato</span>
+                <span class="info"> {{ student.isEmployee }}</span>
+            </div>
+
+            <div class="btn btn-back" aria-label="Basic example">
+                <button (click)="onBack()" class="btn">Indietro</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

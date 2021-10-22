@@ -1,0 +1,7 @@
+.vscode/*
+/AcademyModel/bin/*
+/AcademyModel/obj/*
+/AcademyPersistance/bin/*
+/AcademyPersistance/obj/*
+/CodeAcademyWeb/bin/*
+/CodeAcademyWeb/obj/*

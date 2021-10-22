@@ -1,0 +1,65 @@
+<div class="container app2" id="main">
+
+    <div class="row justify-content-center">
+
+        <div class="teacher_card" *ngIf="teacher">
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">ID</span>
+                <span class="info"> {{ teacher.id }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Nome</span>
+                <span class="info"> {{ teacher.firstname}}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Cognome</span>
+                <span class="info"> {{ teacher.lastname }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Data di nascita</span>
+                <span class="info"> {{ teacher.dateOfBirth }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Stipendio</span>
+                <span class="info"> {{ teacher.payRate }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Indirizzo</span>
+                <span class="info"> {{ teacher.address }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Città</span>
+                <span class="info"> {{ teacher.city }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Email</span>
+                <span class="info"> {{ teacher.email }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Numero di telefono</span>
+                <span class="info"> {{ teacher.phoneNumber }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Esterno</span>
+                <span class="info"> {{ teacher.isContractor }}</span>
+            </div>
+
+            <div class="btn btn-back" aria-label="Basic example">
+                <button (click)="onBack()" class="btn">Indietro</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

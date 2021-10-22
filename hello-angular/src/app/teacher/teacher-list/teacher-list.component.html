@@ -1,0 +1,43 @@
+<div class="container app2" id="main">
+    <div class="row">
+        <div class="col-sm-12">
+            <button class="btn btn-success mb-3" [routerLink]="['/addteacher', 0]" style="width: 200px;">Aggiungi Insegnante</button>
+            <table class="table table-dark table-striped table-hover" style="width: 100%; user-select: none; -moz-user-select: none;">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Cognome</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Data di nascita</th>
+                        <th scope="col">Indirizzo</th>
+                        <th scope="col">Città</th>
+                        <th scope="col">Esterno</th>
+                        <th scope="col">Stipendio</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let s of teachers">
+                        <td>{{ s.id }}</td>
+                        <td>{{ s.firstname }}</td>
+                        <td>{{ s.lastname }}</td>
+                        <td>{{ s.email }}</td>
+                        <td>{{ s.dateOfBirth }}</td>
+                        <td>{{ s.address }}</td>
+                        <td>{{ s.city }}</td>
+                        <td>{{ s.isContractor }}</td>
+                        <td>{{ s.payRate }}</td>
+                        <td style="text-align: right;">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-primary" [routerLink]="['/teacherdetails', s.id]">Info</button>
+                                <button type="button" class="btn btn-warning" [routerLink]="['/addteacher', s.id]">Modifica</button>
+                                <button type="button" class="btn btn-danger" (click)="clickMethod(s.id)">Elimina</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

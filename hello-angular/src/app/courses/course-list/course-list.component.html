@@ -1,0 +1,41 @@
+<div class="container app2" id="main">
+    <div class="row">
+        <div class="col-sm-12">
+            <button class="btn btn-success mb-3" [routerLink]="['/addcourse', 0]" style="width: 200px;">Aggiungi Corso</button>
+            <table class="table table-dark table-striped table-hover" style="width: 100%; user-select: none; -moz-user-select: none;">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Titolo</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col">Nome area</th>
+                        <th scope="col">Livello</th>
+                        <th scope="col">Data creazione</th>
+                        <th scope="col">Certificazione</th>
+                        <th scope="col">Prezzo base</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let c of courses">
+                        <td>{{ c.id }}</td>
+                        <td>{{ c.title }}</td>
+                        <td>{{ c.description }}</td>
+                        <td>{{ c.areaName }}</td>
+                        <td>{{ c.level }}</td>
+                        <td>{{ c.creationDate }}</td>
+                        <td>{{ c.grantsCertification }}</td>
+                        <td>{{ c.basePrice }}</td>
+                        <td style="text-align: right;">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-primary" [routerLink]="['/coursedetails', c.id]">Info</button>
+                                <button type="button" class="btn btn-warning" [routerLink]="['/addcourse', c.id]">Modify</button>
+                                <button type="button" class="btn btn-danger" (click)="clickMethod(c.id)">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
