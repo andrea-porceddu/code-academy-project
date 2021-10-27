@@ -27,6 +27,7 @@ export class CourseAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
+
     this.service.getAreas()
       .subscribe({
         next: as => this.areas = as,
@@ -73,7 +74,7 @@ export class CourseAddComponent implements OnInit {
           next: cs => {
             this.course = cs;
             alert("Corso aggiornato con id: " + this.course.id);
-            this.router.navigate(["/courses"])
+            this.router.navigate(["/courses"]);
           },
           error: err => console.log(err)
         });

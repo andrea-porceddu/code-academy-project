@@ -98,6 +98,15 @@ export class DidactisService {
       );
   }
 
+  updateEdition(edition: Edition): Observable<Edition> {
+    const hs = new HttpHeaders({
+      "Content-Type": "application/json"
+    });
+    return this.http.put<Edition>(this.courseEditionUrl, edition, { headers: hs })
+      .pipe(tap(data => console.log(JSON.stringify(data))),
+        catchError(this.handleError));
+  }
+
   deleteEdition(id: Number): Observable<Edition> {
     return this.http.delete<Edition>(`${this.courseEditionUrl}/${id}`)
       .pipe(tap(data => console.log(JSON.stringify(data))),

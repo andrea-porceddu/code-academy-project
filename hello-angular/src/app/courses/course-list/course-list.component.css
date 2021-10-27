@@ -1,28 +1,40 @@
-.app{
-    margin-top:30px;       
+.app {
+    margin-top: 30px;
 }
 
-.app2{
-  margin-top:30px;
-  padding: 30px;
-  padding-bottom: 0px;
+.app2 {
+    margin-top: 30px;
+    padding: 30px;
+    padding-bottom: 0px;
 }
 
-.myborder{
-  height: 10px;
-  width: 100%;
-  background-color: red;
+.table {
+    margin-bottom: 0px;
+    text-align: center;
+    vertical-align: middle;
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 15px 25px 20px rgb(27, 27, 27);
 }
 
-.table{
-  margin-bottom: 0px;
-  text-align: center; 
-  vertical-align: middle;
-  -moz-box-shadow: 10px 10px 5px #888;
-  -webkit-box-shadow: 10px 10px 5px #888;
-  box-shadow: 15px 25px 20px rgb(27, 27, 27);
+.buttonsearch {
+    display: flex;
 }
 
-.sortable tr{
-  cursor: pointer;
+.el-sx {
+    float: left;
+}
+
+.form-outline {
+    height: 38px;
+}
+
+.input-group {
+    justify-content: end;
+}
+
+.select {
+    justify-content: end;
+    width: 14%;
+    margin-right: 20px;
 }

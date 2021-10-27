@@ -14,16 +14,7 @@ label {
 }
 
 .btn-info {
-    width: 600px;
     height: 50px;
-    margin-left: 5%;
-    margin-top: 50px;
-}
-
-.btn-warning {
-    width: 600px;
-    height: 50px;
-    margin-left: 25%;
     margin-top: 50px;
 }
 
@@ -39,4 +30,9 @@ label {
     -webkit-box-shadow: 10px 10px 5px #888;
     box-shadow: 15px 25px 20px rgb(27, 27, 27);
     transform: translateY(-3px);
+}
+
+.btn-warning {
+    height: 50px;
+    margin-top: 50px;
 }

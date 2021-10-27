@@ -16,7 +16,6 @@ import { StudentAddComponent } from './student/student-add/student-add.component
 import { TeacherListComponent } from './teacher/teacher-list/teacher-list.component';
 import { TeacherAddComponent } from './teacher/teacher-add/teacher-add.component';
 import { TeacherDetailsListComponent } from './teacher/teacher-details-list/teacher-details-list.component';
-import { SearchPersonComponent } from './search/search-person/search-person.component';
 import { EditionDetailsComponent } from './edition/edition-details/edition-details.component';
 
 @NgModule({
@@ -33,7 +32,6 @@ import { EditionDetailsComponent } from './edition/edition-details/edition-detai
     TeacherAddComponent,
     TeacherListComponent,
     TeacherDetailsListComponent,
-    SearchPersonComponent,
     EditionDetailsComponent,
   ],
 

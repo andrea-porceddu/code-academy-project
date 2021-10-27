@@ -17,17 +17,24 @@ namespace CodeAcademyWeb.Controllers
 	public class CourseEditionController : Controller
 	{
 		private IDidactisService service;
+		private IPeopleService peopleService;
 		private IMapper mapper;
-		public CourseEditionController(IDidactisService service, IMapper mapper)
+		public CourseEditionController(IDidactisService service, IPeopleService peopleService, IMapper mapper)
 		{
 			this.service = service;
+			this.peopleService = peopleService;
 			this.mapper = mapper;
 		}
 		[HttpGet]
 		public IActionResult GetAll()
 		{
 			var editions = service.GetAllEditions();
-			var editionDTOs = mapper.Map<IEnumerable<CourseEditionDTO>>(editions);
+			var editionDTOs = mapper.Map<IEnumerable<CourseEditionDetailsDTO>>(editions);
+			var instructors = peopleService.GetInstructors().ToList();
+			for (int i = 0; i < editions.Count(); i++)
+			{
+				editionDTOs.ToList()[i].InstructorFullName = $"{instructors[i].Firstname} {instructors[i].Lastname}";
+			}
 			return Ok(editionDTOs);
 		}
 		[Route("{id}")]

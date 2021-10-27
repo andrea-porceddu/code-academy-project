@@ -1,33 +1,65 @@
 <div class="container app2" id="main">
-</div>
 
-<div class="image_card">
-    <img src="\assets\imagines\online-course.png" alt="..." class="responsive-img" style="width: 200px;">
-</div>
+    <div class="row justify-content-center">
 
-<div class="edition_card" *ngIf="edition">
+        <div class="edition-card" *ngIf="edition">
 
-    <a (click)="onBack()" class="previous">&laquo;</a>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">ID</span>
+                <span class="info"> {{ edition.id }}</span>
+            </div>
 
-    <span>Edizioni</span>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Codice</span>
+                <span class="info"> {{ edition.code}}</span>
+            </div>
 
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">ID</span>
-        <span class="info"> {{ edition.id }}</span>
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Descrizione</span>
+                <span class="info"> {{ edition.description }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Prezzo</span>
+                <span class="info"> {{ edition.realPrice }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Data inizio</span>
+                <span class="info"> {{ edition.startDate }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Data fine</span>
+                <span class="info"> {{ edition.finalizationDate }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Titolo corso</span>
+                <span class="info"> {{ edition.courseTitle }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Id istruttore</span>
+                <span class="info"> {{ edition.instructorId }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Id corso</span>
+                <span class="info"> {{ edition.courseId }}</span>
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-text" id="basic-addon1">Nome istruttore</span>
+                <span class="info"> {{ edition.instructorFullName }}</span>
+            </div>
+
+            <div class="btn btn-back" aria-label="Basic example">
+                <button (click)="onBack()" class="btn">Indietro</button>
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Codice</span>
-        <span class="info"> {{ edition.code}}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Descrizione</span>
-        <span class="info"> {{ edition.description }}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Prezzo Effettivo</span>
-        <span class="info"> {{ edition.realPrice }}</span>
-    </div>
 </div>

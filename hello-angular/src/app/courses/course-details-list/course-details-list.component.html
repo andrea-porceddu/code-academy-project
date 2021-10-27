@@ -2,76 +2,87 @@
 
     <div class="row" *ngIf="course">
 
-        <div class="col-sm-12">
+        <div class="col-sm-6">
 
+            <div class="row course-card">
+                <div class="col-sm-6 mx-auto">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">ID</span>
+                        <span class="info"> {{ course.id }}</span>
+                    </div>
 
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Titolo</span>
+                        <span class="info"> {{ course.title }}</span>
+                    </div>
 
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">ID</span>
-                <span class="info"> {{ course.id }}</span>
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Descrizione</span>
+                        <span class="info">{{ course.description }}</span>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Durata</span>
+                        <span class="info">{{ course.duration }}</span>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Prezzo Base</span>
+                        <span class="info">{{ course.basePrice }}</span>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Syllabus</span>
+                        <span class="info">{{ course.syllabus }}</span>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Livello</span>
+                        <span class="info">{{ course.level }}</span>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">ID Area</span>
+                        <span class="info">{{ course.areaId }}</span>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Nome Area</span>
+                        <span class="info">{{ course.areaName }}</span>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Data di Creazione</span>
+                        <span class="info">{{ course.creationDate }}</span>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Con Certificazione</span>
+                        <span class="info">{{ course.grantsCertification }}</span>
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-text" id="basic-addon1">Edizioni</span>
+                        <span class="info">{{ editions.length }}</span>
+                    </div>
+
+                </div>
             </div>
 
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Titolo</span>
-                <span class="info"> {{ course.title }}</span>
+        </div>
+
+        <div class="col-sm-6">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <button class="btn btn-add-edition mb-3" [routerLink]="['/addedition', 0]">Aggiungi un'edizione</button>
+                    <button (click)="onBack()" class="btn btn-back mb-3">Torna indietro</button>
+                </div>
             </div>
 
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Descrizione</span>
-                <span class="info">{{ course.description }}</span>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Durata</span>
-                <span class="info">{{ course.duration }}</span>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Prezzo Base</span>
-                <span class="info">{{ course.basePrice }}</span>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Syllabus</span>
-                <span class="info">{{ course.syllabus }}</span>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Livello</span>
-                <span class="info">{{ course.level }}</span>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">ID Area</span>
-                <span class="info">{{ course.areaId }}</span>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Nome Area</span>
-                <span class="info">{{ course.areaName }}</span>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Data di Creazione</span>
-                <span class="info">{{ course.creationDate }}</span>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Con Certificazione</span>
-                <span class="info">{{ course.grantsCertification }}</span>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-text" id="basic-addon1">Edizioni</span>
-                <span class="info">{{ editions.length }}</span>
-            </div>
-
-
-
-
-            <button class="btn btn-add-edition mb-3" [routerLink]="['/addedition', course.id]">Aggiungi Edizione</button>
-
-            <table class="table table-dark table-striped table-hover" style="width: 80%; user-select: none; -moz-user-select: none;">
+            <table class="table table-dark table-striped table-hover" style="width: 100%; user-select: none; -moz-user-select: none;">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -98,12 +109,8 @@
                 </tbody>
             </table>
 
-            <div class="btn btn-back" aria-label="Basic example">
-                <button (click)="onBack()" class="btn">Indietro</button>
-            </div>
-
-
-
         </div>
 
     </div>
+
+</div>

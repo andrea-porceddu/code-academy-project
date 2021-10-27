@@ -15,6 +15,8 @@ export class CourseListComponent implements OnInit {
 
   public courses: Course[] = [];
   public course: Course = new Course();
+  public searchText: string = "";
+  public selectedField: string = "";
 
   constructor(private service: DidactisService, private router: Router, private route: ActivatedRoute) {
   }
@@ -54,4 +56,37 @@ export class CourseListComponent implements OnInit {
       error: err => console.log(err)
     });
   }
+
+  search() {
+    let obsCourses: Observable<Course[]> = this.service.getCourses();
+    obsCourses.subscribe({
+      next: c => {
+        this.courses = c;
+
+        var coursesToRemove : Course[] = []; 
+        console.log(this.courses.length);
+        for (const index in this.courses) {
+          console.log(index);
+          if (Object.prototype.hasOwnProperty.call(this.courses, index)) {
+            const course = this.courses[index];
+            if (!course[this.selectedField as keyof Course].toString().toLocaleLowerCase().includes(this.searchText)) {
+              coursesToRemove.push(course);
+            }
+          }
+        }
+
+        for (const index in coursesToRemove) {
+          if (Object.prototype.hasOwnProperty.call(coursesToRemove, index)) {
+            const student = coursesToRemove[index];
+            const index2 = this.courses.indexOf(student);
+              if (index2 > -1) {
+                this.courses.splice(index2, 1);
+              }
+          }
+        }
+      },
+      error: err => console.log(err)
+    });
+  }
+
 }

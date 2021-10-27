@@ -30,7 +30,7 @@ namespace AcademyEFPersistance.EFContext
 			optionsBuilder.UseSqlServer("Server = localhost; User Id=sa; Password=<Sup3rm3gaeasi3ststrong3stpassword3ver>; Database = Academy", x => x.UseNodaTime())
 			    .LogTo(Console.WriteLine,
 			    new[] {
-				 DbLoggerCategory.Database.Command.Name
+				  DbLoggerCategory.Database.Command.Name
 				    },
 				     LogLevel.Information)
 				     .EnableSensitiveDataLogging();

@@ -1,42 +1,59 @@
-<div class="container app2" id="main">
-</div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
 
-<div class="image_card">
-    <img src="\assets\imagines\online-course.png" alt="..." class="responsive-img" style="width: 200px;">
-</div>
+            <form novalidate (ngSubmit)="save(addEditionForm)" #addEditionForm="ngForm">
 
-<div class="edition_card" *ngIf="edition">
+                <label for="code" class="form-label">Codice Edizione</label>
+                <input type="text" class="form-control myshadow" id="code" name="code" required minlength="5" [(ngModel)]="edition.code" #editionCode="ngModel" [ngClass]="{ 'is-invalid' : ( editionCode.touched || editionCode.dirty ) && !editionCode.valid }">
+                <span class="invalid-feedback">
+                  <span *ngIf="editionCode.errors?.required"> Il codice edizione è obbligatorio.</span>
+                <span *ngIf="editionCode.errors?.minlength"> Il codice edizione deve essere almeno di 5 caratteri.</span>
+                </span>
 
-    <a (click)="onBack()" class="previous">&laquo;</a>
+                <label for="description" class="form-label">Descrizione</label>
+                <input type="text" class="form-control myshadow" id="description" name="description" required minlength="10" [(ngModel)]="edition.description" #editionDescription="ngModel" [ngClass]="{ 'is-invalid' : ( editionDescription.touched || editionDescription.dirty ) && !editionDescription.valid }">
+                <span class="invalid-feedback">
+                  <span *ngIf="editionDescription.errors?.required"> La descrizione è obbligatoria. </span>
+                <span *ngIf="editionDescription.errors?.minlength"> La descrizione deve essere almeno di 10 caratteri.</span>
+                </span>
 
-    <span>Edizioni</span>
+                <label for="startDate" class="form-label">Data di creazione</label>
+                <input type="date" class="form-control myshadow" id="startDate" name="startDate" [(ngModel)]="edition.startDate" #editionStartDate="ngModel" [ngClass]="{ 'is-invalid' : ( editionStartDate.touched || editionStartDate.dirty ) && !editionStartDate.valid }">
+                <span class="invalid-feedback">
+                  <span *ngIf="editionStartDate.errors?.required"> La data di creazione è obbligatoria.</span>
+                </span>
 
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">ID</span>
-        <span class="info"> {{ edition.id }}</span>
+                <label for="finalizationDate" class="form-label">Data di fine edizione</label>
+                <input type="date" class="form-control myshadow" id="finalizationDate" name="finalizationDate" [(ngModel)]="edition.finalizationDate" #finalizationDate="ngModel" [ngClass]="{ 'is-invalid' : ( finalizationDate.touched || finalizationDate.dirty ) && !finalizationDate.valid }">
+                <span class="invalid-feedback">
+                  <span *ngIf="finalizationDate.errors?.required"> La data di fine edizione è obbligatoria.</span>
+                </span>
+
+                <label for="realPrice" class="form-label">Prezzo effettivo</label>
+                <input type="number" class="form-control myshadow" id="realPrice" onfocus="this.value=''" name="realPrice" [(ngModel)]="edition.realPrice" #editionRealPrice="ngModel" [ngClass]="{ 'is-invalid' : ( editionRealPrice.touched || editionRealPrice.dirty ) && !editionRealPrice.valid }">
+                <span class="invalid-feedback">
+                  <span *ngIf="editionRealPrice.errors?.required"> Il prezzo è obbligatorio. </span>
+                </span>
+
+                <label for="instructorId" class="form-label">Docente</label>
+                <select id="instructorId" class="form-select myshadow" name="instructorId" [(ngModel)]="edition.instructorId">
+                  <option *ngFor="let teacher of teachers" [value]="teacher.id"> {{ teacher.firstname }} {{ teacher.lastname }}</option>
+                </select>
+
+                <label for="courseId" class="form-label">Corsi</label>
+                <select id="courseId" class="form-select myshadow" name="courseId" [(ngModel)]="edition.courseId">
+                  <option *ngFor="let c of courses" [value]="c.id"> {{ c.title }} </option>
+                </select>
+
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <input type="submit" class="btn btn-info" value="invia" [title]="addEditionForm.valid? 'Crea edizione' : 'Disabilitata finchè i dati non sono corretti'" [disabled]="!addEditionForm.valid">
+                    <button (click)="onBack()" class="btn btn-warning">Indietro</button>
+                </div>
+
+            </form>
+
+        </div>
     </div>
 
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Codice</span>
-        <span class="info"> {{ edition.code}}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Descrizione</span>
-        <span class="info"> {{ edition.description }}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Prezzo Effettivo</span>
-        <span class="info"> {{ edition.realPrice }}</span>
-    </div>
-</div>
-<label for="courseId" class="form-label">Corsi</label>
-<select id="courseId" class="form-select myshadow" name="courseId" formControlName="courseId">
-                <option *ngFor="let c of courses" [value]="c.id"> {{ c.title }} </option>
-            </select>
-
-<div class="btn-group" role="group" aria-label="Basic example">
-    <input type="submit" class="btn btn-info" value="invia" [title]="editionForm.valid? 'Crea edizione' : 'Disabilitata finchè i dati non sono corretti'" [disabled]="!editionForm.valid">
-    <button (click)="onBack()" class="btn btn-warning">Indietro</button>
 </div>

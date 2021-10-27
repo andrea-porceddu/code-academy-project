@@ -1,7 +1,34 @@
 <div class="container app2" id="main">
     <div class="row">
         <div class="col-sm-12">
-            <button class="btn btn-success mb-3" [routerLink]="['/addstudent', 0]" style="width: 200px;">Aggiungi Studente</button>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="el-sx">
+                        <button class="btn btn-success mb-3" [routerLink]="['/addstudent', 0]" style="width: 200px;">Aggiungi Studente</button>
+                    </div>
+                    <div class="buttonsearch">
+                        <div class="input-group">
+                            <div class="select">
+                                <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedField">
+                                <option value="">Ricerca per...</option>
+                                <option value="id">ID</option>
+                                <option value="firstname">Nome</option>
+                                <option value="lastname">Cognome</option>
+                                <option value="city">Città</option>
+                              </select>
+                            </div>
+                            <div class="form-outline d-flex">
+                                <input type="search" id="form1" class="form-control" [(ngModel)]="searchText" ng-change="detectEmpty()" />
+                                <label class="form-label" for="form1"></label>
+                            </div>
+                            <button (click)="search()" type="button" class="btn btn-primary">
+                          <i class="fas fa-search">Cerca</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <table class="table table-dark table-striped table-hover" style="width: 100%; user-select: none; -moz-user-select: none;">
                 <thead>
                     <tr>

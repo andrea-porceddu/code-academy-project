@@ -8,11 +8,13 @@
 }
 
 .course-card {
-    display: flex;
     padding-top: 30px;
+    /* width: 1000px; */
     background-color: white;
+    /* display: inline; */
+    /* float: left; */
     border-radius: 30px;
-    box-shadow: 5px 10px 5px rgb(27, 27, 27);
+    box-shadow: 5px 10px 5px #1b1b1b;
 }
 
 a {
@@ -36,34 +38,46 @@ a:hover {
 }
 
 .input-group {
-    width: 340px;
+    /* margin-left: 50px; */
     margin-top: 25px;
     margin-bottom: 10px;
 }
 
-.btn-add-edition {
-    background-color: #2aa559;
-    width: 170px;
+.input-group>.input-group-prepend {
+    flex: 0 0 30%;
+}
+
+.input-group .input-group-text {
+    width: 100%;
 }
 
 .info {
     background-color: #dddbd9;
     height: 38px;
     line-height: 38px;
+    /* width: 80%; */
     border-radius: 5px;
     text-align: center;
 }
 
 span {
-    width: 170px;
+    width: 100%;
 }
 
-.btn-back button {
-    margin: 35px;
+.btn-back {
     background-color: #76a8e0;
     color: #fff;
+    margin-left: 20px;
 }
 
-.btn-back button:hover {
+.btn-back:hover {
     background-color: #6d9dd3;
+}
+
+.btn-add-edition {
+    background-color: #198754;
+}
+
+.btn {
+    color: white;
 }

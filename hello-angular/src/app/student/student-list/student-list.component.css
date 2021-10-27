@@ -16,3 +16,25 @@
     -webkit-box-shadow: 10px 10px 5px #888;
     box-shadow: 15px 25px 20px rgb(27, 27, 27);
 }
+
+.buttonsearch {
+    display: flex;
+}
+
+.el-sx {
+    float: left;
+}
+
+.form-outline {
+    height: 38px;
+}
+
+.input-group {
+    justify-content: end;
+}
+
+.select {
+    justify-content: end;
+    width: 14%;
+    margin-right: 20px;
+}

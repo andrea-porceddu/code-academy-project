@@ -1,39 +1,19 @@
 .app2 {
     margin-top: 20px;
     padding: 30px;
-    padding-bottom: 0px;
 }
 
 .sortable tr {
     cursor: pointer;
 }
 
-.edition_card {
+.edition-card {
+    padding-top: 30px;
     width: 1000px;
-    height: 1000px;
     background-color: white;
     display: inline;
     float: left;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    -moz-box-shadow: 10px 10px 5px #888;
-    -webkit-box-shadow: 10px 10px 5px #888;
-    box-shadow: 5px 10px 5px rgb(27, 27, 27);
-}
-
-.image_card {
-    text-align: center;
-    width: 300px;
-    height: 1000px;
-    background-color: red;
-    margin-left: 300px;
-    display: inline;
-    position: relative;
-    float: left;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    -moz-box-shadow: 10px 10px 5px #888;
-    -webkit-box-shadow: 10px 10px 5px #888;
+    border-radius: 30px;
     box-shadow: 5px 10px 5px rgb(27, 27, 27);
 }
 
@@ -45,19 +25,6 @@ a {
     position: relative;
     left: 940px;
     top: 20px;
-}
-
-img {
-    max-height: 100%;
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
 }
 
 a:hover {
@@ -77,12 +44,10 @@ a:hover {
     width: 90%;
 }
 
-.table {
-    margin-left: 50px;
-}
-
 .info {
-    background-color: rgba(0, 0, 0, 0.102);
+    background-color: #dddbd9;
+    height: 38px;
+    line-height: 38px;
     width: 80%;
     border-radius: 5px;
     text-align: center;
@@ -90,4 +55,14 @@ a:hover {
 
 span {
     width: 170px;
+}
+
+.btn-back button {
+    margin: 35px;
+    background-color: #76a8e0;
+    color: #fff;
+}
+
+.btn-back button:hover {
+    background-color: #6d9dd3;
 }
